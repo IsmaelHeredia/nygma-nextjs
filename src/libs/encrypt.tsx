@@ -72,10 +72,16 @@ export default function encryptMessage(name: string, content: string, iv: any) {
 
         const decryptedMessage = CryptoJS.AES.decrypt(message, password, { iv: iv }).toString(CryptoJS.enc.Utf8);
 
-        document.getElementById("content").innerHTML = decryptedMessage;
+        if(decryptedMessage != "") {
 
-        document.getElementById("div_form").style.display = "none";
-        document.getElementById("div_content").style.display = "block";
+            const cleanMessage = decryptedMessage.replace(/<[^>]*>/g, "");
+
+            document.getElementById("content").innerHTML = cleanMessage;
+
+            document.getElementById("div_form").style.display = "none";
+            document.getElementById("div_content").style.display = "block";
+
+        }
 
     }
 
