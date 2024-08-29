@@ -14,6 +14,7 @@ export const options = {
     },
   },
   */
+  timezone: "-03:00",
   logging: process.env.NODE_ENV === "development" ? console.log : false,
   migrationStorageTableName: "migrations",
 };
