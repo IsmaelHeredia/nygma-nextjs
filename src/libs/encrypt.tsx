@@ -46,7 +46,9 @@ export default function encryptMessage(name: string, content: string, iv: any) {
             <div style="text-align: center;">
                 <label class="text-center">Password</label>
             </div>
-            <input type="password" class="form-control" id="txtPassword" placeholder="Password">
+            <div class="d-flex justify-content-center">
+                <input style="width: 30%" type="password" class="form-control" id="txtPassword">
+            </div>
         </div>
         <div class="row justify-content-center">
             <button class="btn btn-success" onclick="decodeMessage()">Decrypt</button>
